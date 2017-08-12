@@ -1,5 +1,5 @@
 {
-  "name": "kenokokoro/rabbitmq-queue",
+  "name": "kenokokoro/laravel-rabbitmq",
   "description": "Queuing, Messages exchange, etc",
   "license": "MIT",
   "authors": [
