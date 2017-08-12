@@ -1,11 +1,11 @@
 RabbitMQ Queue driver for Laravel/Lumen 5.4+
 ======================
 
-### Description
+## Description
 Laravel/Lumen wrapper for RabbitMQ queue (queue - worker) and messaging ( pub - sub). This package uses separate 
 configuration options for the Laravel\Lumen queue extension, and another implementation for Pub\Sub.
 
-### Installation
+## Installation
 
 1. Install this package via composer using:
 
@@ -35,7 +35,7 @@ configuration options for the Laravel\Lumen queue extension, and another impleme
 	*NOTE: The environment configuration values are used only in the laravel queue extension. For the messaging (pub - sub)
 	it is used different type of configuration*
 
-### Usage
+## Usage
 1. Queue ([Laravel official documentation](https://laravel.com/docs/5.4/queues))
     - On Laravel: `Queue::push(App\Jobs\DummyJob::class)`
     - On Lumen you can use the same if you have `$app->withFacades()` added in your `boostrap/app.php` file, or 
@@ -45,8 +45,8 @@ configuration options for the Laravel\Lumen queue extension, and another impleme
 2. Messaging
 
     The messaging is using different configuration for queue management (except for the rabbitmq connection). 
-    To get in touch for some examples of how the rabbitmq exchange and queue parameters are important check: 
-    https://www.rabbitmq.com/tutorials/tutorial-three-php.html
+    To get in touch for some examples of how the rabbitmq exchange and queue parameters are important check the
+    [RabbitMQ examples](https://www.rabbitmq.com/tutorials/tutorial-three-php.html)
     
     1. Using dependency injection
     
@@ -56,6 +56,7 @@ configuration options for the Laravel\Lumen queue extension, and another impleme
         namespace App\Console\Commands;
         use Illuminate\Console\Command;
         use V9\RabbitMQ\Messaging\Pub\PublishInterface;
+        use V9\RabbitMQ\Messaging\Pub\Data;
         class PublishCommand extends Command
         {
             protected $signature = 'publish';
@@ -73,6 +74,8 @@ configuration options for the Laravel\Lumen queue extension, and another impleme
             public function handle()
             {
                 $this->publish->route(['test1', 'test2', 'test3'], str_random());
+                # Or if you want to send array you can use the dedicated class
+                # $this->publish->route(['test1', 'test2', 'test3'], new Data(['hello' => 'world']);
             }
         }
         ```
@@ -115,6 +118,6 @@ configuration options for the Laravel\Lumen queue extension, and another impleme
     
     2. The same can be achieved using `app(V9\RabbitMQ\Messaging\Sub\ConsumeInterface::class)` or `app(V9\RabbitMQ\Messaging\Pub\PublishInterface:class)`
     
-    
-### License
-The Laravel\Lumen RabbitMQ package is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+## License
+The Laravel\Lumen RabbitMQ package is open-sourced software licensed 
+under the [MIT license](http://opensource.org/licenses/MIT).
