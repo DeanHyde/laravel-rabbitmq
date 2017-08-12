@@ -101,7 +101,7 @@ configuration options for the Laravel\Lumen queue extension, and another impleme
 
             public function handle()
             {
-                $this->consume->route(['user.register'], function ($msg) {
+                $this->consume->route(['test1'], function ($msg) {
                     return $this->msg($msg);
                 });
             }
