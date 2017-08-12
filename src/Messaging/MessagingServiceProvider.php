@@ -47,7 +47,7 @@ class MessagingServiceProvider extends ServiceProvider
             /** @var Connector $connector */
             $connector = $this->app['queue.v9.connector'];
 
-            return new V9Messaging($connector, app(PublishInterface::class), app(ConsumeInterface::class));
+            return new V9Messaging($connector);
         });
     }
 
