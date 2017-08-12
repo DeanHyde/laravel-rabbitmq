@@ -73,9 +73,9 @@ configuration options for the Laravel\Lumen queue extension, and another impleme
 
             public function handle()
             {
-                $this->publish->route(['test1', 'test2', 'test3'], str_random());
+                $this->publish->route(['test.1', 'test.2', 'test.3'], str_random());
                 # Or if you want to send array you can use the dedicated class
-                # $this->publish->route(['test1', 'test2', 'test3'], new Data(['hello' => 'world']);
+                # $this->publish->route(['test.1', 'test.2', 'test.3'], new Data(['hello' => 'world']);
             }
         }
         ```
@@ -104,7 +104,7 @@ configuration options for the Laravel\Lumen queue extension, and another impleme
 
             public function handle()
             {
-                $this->consume->route(['test1'], function ($msg) {
+                $this->consume->route(['test.*'], function ($msg) {
                     return $this->msg($msg);
                 });
             }

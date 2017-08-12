@@ -14,7 +14,7 @@ return [
             ],
             'exchange_params' => [
                 'name' => 'pubsub',
-                'type' => 'direct',
+                'type' => 'topic',
                 'passive' => false,
                 'durable' => false,
                 'auto_delete' => false,
@@ -32,7 +32,7 @@ return [
             ],
             'exchange_params' => [
                 'name' => 'pubsub',
-                'type' => 'direct',
+                'type' => 'topic',
                 'passive' => false,
                 'durable' => false,
                 'auto_delete' => false,
