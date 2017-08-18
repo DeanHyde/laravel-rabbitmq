@@ -9,7 +9,7 @@ use V9\RabbitMQ\Messaging\V9Messaging;
 
 class Publisher extends V9Messaging implements PublishInterface
 {
-    public function route($routes, $data, $configKey = 'publish')
+    public function route($routes, Data $data, $configKey = 'publish')
     {
         $this->setup($configKey, $routes);
         $message = new AMQPMessage($data);

@@ -8,9 +8,9 @@ interface PublishInterface
 {
     /**
      * @param mixed $routes
-     * @param $data
+     * @param Data $data
      * @param string $configKey
      * @return mixed
      */
-    public function route($routes, $data, $configKey = 'publish');
+    public function route($routes, Data $data, $configKey = 'publish');
 }
