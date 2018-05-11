@@ -35,5 +35,5 @@
             "RabbitMQ": "DeanKH\\RabbitMQ\\Messaging\\V9Messaging"
         }
     }
-},
+  }
 }
