@@ -11,17 +11,13 @@ class QueueServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->booted(function() {
-            /** @var QueueManager $queue */
-            $queue = $this->app['queue'];
-            $connector = new V9QueueConnector;
-            $queue->stopping(function () use ($connector) {
-                $connector->connection()->close();
+        if (is_lumen()) {
+            $this->load();
+        } else {
+            $this->app->booted(function () {
+                $this->load();
             });
-            $queue->addConnector('rabbitmq', function () use ($connector) {
-                return $connector;
-            });
-        });
+        }
     }
 
     /**
@@ -31,5 +27,18 @@ class QueueServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->mergeConfigFrom(__DIR__ . "./../../config/queue.php", "queue.connections.rabbitmq");
+    }
+
+    public function load()
+    {
+        /** @var QueueManager $queue */
+        $queue = $this->app['queue'];
+        $connector = new V9QueueConnector;
+        $queue->stopping(function () use ($connector) {
+            $connector->connection()->close();
+        });
+        $queue->addConnector('rabbitmq', function () use ($connector) {
+            return $connector;
+        });
     }
 }
