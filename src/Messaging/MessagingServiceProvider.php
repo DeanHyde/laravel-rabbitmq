@@ -1,14 +1,14 @@
 <?php
 
 
-namespace V9\RabbitMQ\Messaging;
+namespace DeanKH\RabbitMQ\Messaging;
 
 
 use Illuminate\Support\ServiceProvider;
-use V9\RabbitMQ\Messaging\Pub\Publisher;
-use V9\RabbitMQ\Messaging\Pub\PublishInterface;
-use V9\RabbitMQ\Messaging\Sub\ConsumeInterface;
-use V9\RabbitMQ\Messaging\Sub\Consumer;
+use DeanKH\RabbitMQ\Messaging\Pub\Publisher;
+use DeanKH\RabbitMQ\Messaging\Pub\PublishInterface;
+use DeanKH\RabbitMQ\Messaging\Sub\ConsumeInterface;
+use DeanKH\RabbitMQ\Messaging\Sub\Consumer;
 
 class MessagingServiceProvider extends ServiceProvider
 {

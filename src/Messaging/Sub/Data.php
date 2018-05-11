@@ -1,7 +1,7 @@
 <?php
 
 
-namespace V9\RabbitMQ\Messaging\Sub;
+namespace DeanKH\RabbitMQ\Messaging\Sub;
 
 
 class Data

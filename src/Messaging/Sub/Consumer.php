@@ -1,11 +1,11 @@
 <?php
 
 
-namespace V9\RabbitMQ\Messaging\Sub;
+namespace DeanKH\RabbitMQ\Messaging\Sub;
 
 
 use Closure;
-use V9\RabbitMQ\Messaging\V9Messaging;
+use DeanKH\RabbitMQ\Messaging\V9Messaging;
 
 class Consumer extends V9Messaging implements ConsumeInterface
 {

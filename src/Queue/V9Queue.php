@@ -1,7 +1,7 @@
 <?php
 
 
-namespace V9\RabbitMQ\Queue;
+namespace DeanKH\RabbitMQ\Queue;
 
 
 use DateTime;

@@ -1,5 +1,5 @@
 {
-  "name": "kenokokoro/laravel-rabbitmq",
+  "name": "deankh/laravel-rabbitmq",
   "description": "Queuing, Messages exchange, etc",
   "license": "MIT",
   "authors": [
@@ -11,7 +11,7 @@
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
-      "V9\\RabbitMQ\\": "src/"
+      "DeanKH\\RabbitMQ\\": "src/"
     },
     "files": [
       "helpers/functions.php"

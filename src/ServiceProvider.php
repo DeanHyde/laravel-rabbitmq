@@ -1,12 +1,12 @@
 <?php
 
 
-namespace V9\RabbitMQ;
+namespace DeanKH\RabbitMQ;
 
 
 use Illuminate\Support\ServiceProvider as SupportServiceProvider;
-use V9\RabbitMQ\Messaging\MessagingServiceProvider;
-use V9\RabbitMQ\Queue\QueueServiceProvider;
+use DeanKH\RabbitMQ\Messaging\MessagingServiceProvider;
+use DeanKH\RabbitMQ\Queue\QueueServiceProvider;
 
 class ServiceProvider extends SupportServiceProvider
 {

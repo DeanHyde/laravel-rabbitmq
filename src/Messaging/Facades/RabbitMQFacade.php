@@ -1,7 +1,7 @@
 <?php
 
 
-namespace V9\RabbitMQ\Messaging\Facades;
+namespace DeanKH\RabbitMQ\Messaging\Facades;
 
 
 use Illuminate\Support\Facades\Facade;
