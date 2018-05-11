@@ -18,6 +18,6 @@ if ( ! function_exists('is_lumen')) {
      */
     function is_lumen()
     {
-        return str_contains(str_app()->version(), 'Lumen');
+        return str_contains(app()->version(), 'Lumen');
     }
 }
