@@ -11,14 +11,16 @@ class QueueServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        /** @var QueueManager $queue */
-        $queue = $this->app['queue'];
-        $connector = new V9QueueConnector;
-        $queue->stopping(function () use ($connector) {
-            $connector->connection()->close();
-        });
-        $queue->addConnector('rabbitmq', function () use ($connector) {
-            return $connector;
+        $this->app->booted(function() {
+            /** @var QueueManager $queue */
+            $queue = $this->app['queue'];
+            $connector = new V9QueueConnector;
+            $queue->stopping(function () use ($connector) {
+                $connector->connection()->close();
+            });
+            $queue->addConnector('rabbitmq', function () use ($connector) {
+                return $connector;
+            });
         });
     }
 
