@@ -1,14 +1,14 @@
 <?php
 
 
-namespace V9\RabbitMQ\Messaging;
+namespace DeanKH\RabbitMQ\Messaging;
 
 
 use Closure;
 use PhpAmqpLib\Channel\AMQPChannel;
 use PhpAmqpLib\Message\AMQPMessage;
-use V9\RabbitMQ\Messaging\Pub\PublishInterface;
-use V9\RabbitMQ\Messaging\Sub\ConsumeInterface;
+use DeanKH\RabbitMQ\Messaging\Pub\PublishInterface;
+use DeanKH\RabbitMQ\Messaging\Sub\ConsumeInterface;
 
 class V9Messaging
 {

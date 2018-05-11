@@ -1,7 +1,7 @@
 <?php
 
 
-namespace V9\RabbitMQ\Messaging;
+namespace DeanKH\RabbitMQ\Messaging;
 
 
 use PhpAmqpLib\Connection\AMQPStreamConnection;
