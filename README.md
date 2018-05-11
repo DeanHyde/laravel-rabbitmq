@@ -9,14 +9,14 @@ configuration options for the Laravel\Lumen queue extension, and another impleme
 
 1. Install this package via composer using:
 
-    `composer require kenokokoro/laravel-rabbitmq`
+    `composer require deanhyde/laravel-rabbitmq`
 
 2. Add the Service Provider
 
-    - For Laravel use the `providers` section in the `config/app.php` file `V9\RabbitMQ\ServiceProvider::class,`. 
-    Afterwards just publish the configuration using: `php artisan vendor:publish --provider=V9\RabbitMQ\ServiceProvider --tag=config`
+    - For Laravel use the `providers` section in the `config/app.php` file `DeanKH\RabbitMQ\ServiceProvider::class,`. 
+    Afterwards just publish the configuration using: `php artisan vendor:publish --provider=DeanKH\RabbitMQ\ServiceProvider --tag=config`
     
-    - For Lumen use `$app->register(V9\RabbitMQ\ServiceProvider::class)` in your `bootstrap/app.php` file. After that 
+    - For Lumen use `$app->register(DeanKH\RabbitMQ\ServiceProvider::class)` in your `bootstrap/app.php` file. After that 
     you will have to create new file in your config folder: `config/messaging.php` and put the sample content from the
     `messaging-sample.php` file found in: `vendor/kenokokoro/laravel-rabbitmq/config/messaging-sample.php`. Finally
     just include this configuration file inside your `bootstrap/app.php` file using: `$app->configure('messaging')`
@@ -55,8 +55,8 @@ configuration options for the Laravel\Lumen queue extension, and another impleme
         <?php
         namespace App\Console\Commands;
         use Illuminate\Console\Command;
-        use V9\RabbitMQ\Messaging\Pub\PublishInterface;
-        use V9\RabbitMQ\Messaging\Pub\Data;
+        use DeanKH\RabbitMQ\Messaging\Pub\PublishInterface;
+        use DeanKH\RabbitMQ\Messaging\Pub\Data;
         class PublishCommand extends Command
         {
             protected $signature = 'publish';
@@ -86,7 +86,7 @@ configuration options for the Laravel\Lumen queue extension, and another impleme
         namespace App\Console\Commands;
         use Illuminate\Console\Command;
         use PhpAmqpLib\Message\AMQPMessage;
-        use V9\RabbitMQ\Messaging\Sub\ConsumeInterface;
+        use DeanKH\RabbitMQ\Messaging\Sub\ConsumeInterface;
         class DummyCommand extends Command
         {
             protected $signature = 'consume';
@@ -116,7 +116,7 @@ configuration options for the Laravel\Lumen queue extension, and another impleme
         }
         ```
     
-    2. The same can be achieved using `app(V9\RabbitMQ\Messaging\Sub\ConsumeInterface::class)` or `app(V9\RabbitMQ\Messaging\Pub\PublishInterface:class)`
+    2. The same can be achieved using `app(DeanKH\RabbitMQ\Messaging\Sub\ConsumeInterface::class)` or `app(DeanKH\RabbitMQ\Messaging\Pub\PublishInterface:class)`
     
 ## License
 The Laravel\Lumen RabbitMQ package is open-sourced software licensed 
