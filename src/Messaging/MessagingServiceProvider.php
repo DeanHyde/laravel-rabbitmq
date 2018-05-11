@@ -22,7 +22,7 @@ class MessagingServiceProvider extends ServiceProvider
         $this->registerConnector();
         $this->registerMessaging();
         $this->bindPubSub();
-        $this->registerFacade();
+        // $this->registerFacade();
     }
 
     public function provides()

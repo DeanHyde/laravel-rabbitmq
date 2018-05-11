@@ -25,5 +25,15 @@
     "illuminate/queue": ">=5.4",
     "illuminate/database": ">=5.4",
     "illuminate/container": ">=5.4"
-  }
+  },
+  "extra": {
+    "laravel": {
+        "providers": [
+            "DeanKH\\RabbitMQ\\ServiceProvider"
+        ],
+        "aliases": {
+            "RabbitMQ": "DeanKH\\RabbitMQ\\Messaging\\V9Messaging"
+        }
+    }
+},
 }
